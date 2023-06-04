@@ -22,32 +22,33 @@ def take_screenshot(url):
     time.sleep(2)  # Wait for the page to load
     screenshot = driver.get_screenshot_as_png()
     driver.quit()
+    print(screenshot)
     return Image.open(BytesIO(screenshot))
 
 
-def send_notification(title, message):
-    toaster = ToastNotifier()
-    toaster.show_toast(title, message)
+# def send_notification(title, message):
+#     toaster = ToastNotifier()
+#     toaster.show_toast(title, message)
 
 
-def process_screenshot(screenshot, instruction):
-    # Process the screenshot and instruction using the desired API
-    # Replace the following code with the actual processing and API call
-    processed_data = f"Processed screenshot using instruction: {instruction}"
-    return processed_data
+# def process_screenshot(screenshot, instruction):
+#     # Process the screenshot and instruction using the desired API
+#     # Replace the following code with the actual processing and API call
+#     processed_data = f"Processed screenshot using instruction: {instruction}"
+#     return processed_data
 
 
 def main():
     url = input("Enter the website URL: ")
-    frequency = int(input("Enter the frequency in seconds: "))
-    instruction = input("Enter the instruction for processing the screenshot: ")
+#     frequency = int(input("Enter the frequency in seconds: "))
+#     instruction = input("Enter the instruction for processing the screenshot: ")
 
-    while True:
+#     while True:
         screenshot = take_screenshot(url)
-        processed_data = process_screenshot(screenshot, instruction)
-        send_notification("Screenshot Processed", processed_data)
-        time.sleep(frequency)
+#         processed_data = process_screenshot(screenshot, instruction)
+#         send_notification("Screenshot Processed", processed_data)
+#         time.sleep(frequency)
 
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
     main()
